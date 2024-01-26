@@ -70,5 +70,17 @@
       "slug": "the-alchemist",
       "description": "A philosophical novel about a young shepherd's journey to find his personal legend."
     }
+  ],
+  "author": [
+    { "id": "1", "name": "William Shakespeare" },
+    { "id": "2", "name": "Jane Austen" },
+    { "id": "3", "name": "Charles Dickens" },
+    { "id": "4", "name": "J.K. Rowling" },
+    { "id": "5", "name": "George Orwell" },
+    { "id": "6", "name": "Agatha Christie" },
+    { "id": "7", "name": "Ernest Hemingway" },
+    { "id": "8", "name": "Gabriel García Márquez" },
+    { "id": "9", "name": "Harper Lee" },
+    { "id": "10", "name": "F. Scott Fitzgerald" }
   ]
 }

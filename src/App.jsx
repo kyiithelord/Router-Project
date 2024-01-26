@@ -1,19 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { GetBookData } from "./service/book.service";
+import useFetch from "./hook/useFetch";
+import { GetAuthorData } from "./service/author.service";
 
 const App = () => {
-  useEffect(() => {
-    // (async () => {
-    //   const res = await fetch("http://localhost:8000/book");
-    //   const data = await res.json();
-    //   console.log(data);
-    // })();
-    (async () => {
-      const data = await GetBookData("book");
-      console.log(data);
-    })();
-  }, []);
-  return <div>App</div>;
+  const { loading, error, data } = useFetch(GetAuthorData, "author");
+  console.log(data);
+
+  return (
+    <div>
+      {loading ? (
+        <h1>Loading</h1>
+      ) : (
+        <>{data ? <>{JSON.stringify(data)}</> : <h1>{error}</h1>}</>
+      )}
+    </div>
+  );
 };
 
 export default App;
+
+// custom hook
+// => build in hook => useState,useEffect,useRef,useContext,useReducer,useLayoutEffect,useId,useTransition,useCallback,useMemo etc...
+// => lib provide hook => useParams,useNavigate,useLocation,useSearchParams
+// => useFetch,
